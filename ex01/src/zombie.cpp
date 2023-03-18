@@ -11,6 +11,11 @@ void	Zombie::setName(std::string name)
 	speak = "BraiiiiiiinnnzzzZ...";
 }
 
+Zombie::Zombie(void)
+{
+	std::cout << "Zombie" << " created" << std::endl;
+}
+
 Zombie::~Zombie(void)
 {
 	std::cout << _name << ": " << "die." << std::endl;
