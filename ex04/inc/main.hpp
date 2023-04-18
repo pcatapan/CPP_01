@@ -1,7 +1,8 @@
 #ifndef MAIN_HPP
 # define MAIN_HPP
 
-# include <fstream>
-# include <iostream>
+#include <iostream>
+#include <fstream>
+#include <string.h>
 
 #endif

@@ -1,46 +1,44 @@
 #include "../inc/main.hpp"
 
-int	main(int argc, char** argv)
+int main(int argc, char *argv[])
 {
-	std::string 	nameFile;
-	std::string 	strOriginal;
-	std::string		strReplace;
+	char			c;
 	size_t			i;
-	size_t			j;
-	std::streampos	size;
-	std::string		memblock;
+	size_t			pos;
+	std::string		str;
+	std::ifstream	input;
+	std::ofstream	output;
 
+	if (argc != 4)
+	{
+		std::cout << "This program accepts 3 parameters, in this order: ";
+		std::cout << "Filename and two strings." << std::endl;
+		return (1);
+	}
+	input.open(argv[1], std::ios::in);
+	if (input.fail())
+		std::cout << "Error: problem opening the: " << argv[1] << std::endl;
+	while (input.get(c))
+		str += c;
+	input.close();
+	output.open((std::string(argv[1]) + ".replace").c_str() , std::ios::out);
+	if (output.fail())
+		std::cout << "Error: problem with the creation of new file" << std::endl;
 	i = 0;
-	if(argc != 4){
-		std::cout << "Number of paramters incorrect" << std::endl;
-		return 1;
-	}
-
-	nameFile = argv[1];
-	strOriginal = argv[2];
-	strReplace = argv[3];
-
-	std::ifstream file (nameFile, std::ios::in | std::ios::binary | std::ios::ate);
-	if (!file.is_open()){
-		std::cout << "Erroe whene open file!" << std::endl;
-		return 1;	
-	}
-	size = file.tellg();
-	memblock.resize(size);
-	file.seekg (0, std::ios::beg);
-	file.read (&memblock[0], size);
-	file.close();
-	i = memblock.find(strOriginal);
-	while (std::streampos(i) < size){
-		i = memblock.find(strOriginal);
-		j = 0;
-		while (strReplace[j])
+	while (i < str.size())
+	{
+		pos = str.find(argv[2], i);
+		if (pos != (size_t)-1)
 		{
-			memblock[i] = strReplace[j];
-			j++;
-			i++;
+			while (i < pos)
+				output << str[i++];
+			if (i == pos)
+				output << argv[3];
+			i += strlen(argv[2]);
 		}
-		std::cout << memblock[i] << std::endl;
+		else
+			output << str[i++];
 	}
-	return 0;
+	output.close();
+	return (0);
 }
