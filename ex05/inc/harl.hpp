@@ -20,7 +20,7 @@ class HARL
 	public :
 		HARL(void);
 		~HARL(void);
-		void compalin(std::string level);
+		void complain(std::string level);
 };
 
 #endif
