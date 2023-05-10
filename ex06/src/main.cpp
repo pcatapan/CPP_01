@@ -5,8 +5,9 @@ int	harl_translate(char *argv)
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
-		if (levels[i] == argv)
+		if (levels[i] == argv) {
 			return (i);
+		}
 	return (-1);
 }
 

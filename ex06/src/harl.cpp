@@ -45,7 +45,7 @@ void	HARL::complain( std::string level )
 {
 	void	(HARL::*fct[4])(void) = { &HARL::debug, &HARL::info, &HARL::warning, &HARL::error };
 
-	std::string	levels[4] = {"debug", "info", "warning", "error"};
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
