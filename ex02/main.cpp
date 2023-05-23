@@ -1,20 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 15:45:39 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 15:45:40 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 
-int	main(void)
+int main( void )
 {
-	std::string string;
-	std::string *stringPTR;
+    std::string str = "HI THIS IS BRAIN";
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
 
-	string = "HI THIS IS BRAIN";
-	stringPTR = &string;
-	std::string &stringREF = string;
+    std::cout << &str << ": " << str << std::endl;
+    std::cout << stringPTR << ": " << *stringPTR << std::endl;
+    std::cout << &stringREF << ": " << stringREF << std::endl;
 
-	std::cout << "The memory address of the string variable : " << &string << std::endl;
-	std::cout << "The memory address held by stringPTR : " << &stringPTR << std::endl;
-	std::cout << "The memory address held by stringREF : " << &stringREF << std::endl;
-	std::cout << "The value of the string variable : " << string << std::endl; 
-	std::cout << "The value of the stringPTR variable : " << stringPTR << std::endl; 
-	std::cout << "The value of the string stringREF : " << stringREF << std::endl;
-
-	return 0;
+    return 0;
 }

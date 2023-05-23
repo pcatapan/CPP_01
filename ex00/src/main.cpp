@@ -1,10 +1,25 @@
-#include "../inc/zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 20:09:21 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/17 20:11:47 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void){
+#include "../inc/Zombie.hpp"
 
-	randomChump("Alex");
-	randomChump("Ugo");
-	randomChump("Marta");
+Zombie	*newZombie(std::string name);
 
-	return 0;
+void	randomChump(std::string name);
+
+int	main(void)
+{
+	Zombie	*z = newZombie("Alex");
+	z->announce();
+	randomChump("Bruno");
+	delete z;
 }

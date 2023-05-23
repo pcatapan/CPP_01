@@ -1,41 +1,26 @@
-#include "../inc/harl.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 16:43:48 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 16:43:54 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	harl_translate(char *argv)
-{
-	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+#include "../inc/Harl.hpp"
 
-	for (int i = 0; i < 4; i++)
-		if (levels[i] == argv) {
-			return (i);
-		}
-	return (-1);
-}
+int main( int ac, char **av ) {
 
-void	harl_switch(char *argv, HARL &harl)
-{
-	switch (harl_translate(argv))
-	{
-		case 0:
-			harl.complain("DEBUG");
-		case 1:
-			harl.complain("INFO");
-		case 2:
-			harl.complain("WARNING");
-		case 3:
-			harl.complain("ERROR");
-			break ;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-	}
-}
+    if (ac != 2) {
+        return (std::cout << "Usage: ./harlFilter \"level\"\n", EXIT_FAILURE);
+    }
+    std::string input = av[1];
+    Harl        harl;
 
-int	main(int argc, char **argv)
-{
-	HARL harl;
+    harl.complain(input);
 
-	if (argc != 2)
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-	else
-		harl_switch(argv[1], harl);
-	return (0);
+    return EXIT_SUCCESS;
 }

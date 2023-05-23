@@ -1,8 +1,18 @@
-#include "../inc/zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 20:09:39 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/17 20:11:45 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Zombie*	newZombie( std::string name ){
-	Zombie *z;
+#include "../inc/Zombie.hpp"
 
-	z = new Zombie(name);
-	return z;
+Zombie	*newZombie(std::string name)
+{
+	return (new Zombie(name));
 }

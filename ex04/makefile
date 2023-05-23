@@ -1,38 +1,47 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/05 17:15:44 by pcatapan          #+#    #+#              #
-#    Updated: 2023/03/18 22:00:09 by pcatapan         ###   ########.fr        #
+#    Created: 2023/05/15 16:24:06 by pcatapan          #+#    #+#              #
+#    Updated: 2023/05/15 16:31:35 by pcatapan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replaceFile
+NAME		= replace
+	
+SRC			= src/*.cpp
 
-SRC = src/*.cpp
+OBJ			= $(SRC:%.cpp=%.o)
 
-OBJC = $(SRC:%.cpp=%.o)
+CC			= c++
+FLAGS		= -Wall -Wextra -Werror -std=c++98
+RM			= rm -rf
 
-CC = g++
+#Colors:
+GREEN		=	\e[92;5;118m
+YELLOW		=	\e[93;5;226m
+GRAY		=	\e[33;2;37m
+RESET		=	\e[0m
+CURSIVE		=	\e[33;3m
 
-FLAGS = -Wall -Werror -Wextra
-
-CPPFLAGS = -std=c++98
 
 all: $(NAME)
 
-$(NAME) : $(SRC)
-	@$(CC) $(FLAGS) $(CPPFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(SRC)
+	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
 
 clean:
-	@rm -f $(OBJS)
+	@$(RM) $(OBJ)
+	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
 
 fclean: clean
-	@rm -f $(NAME)
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus norm

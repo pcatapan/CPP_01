@@ -1,22 +1,30 @@
-#include "../inc/zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 15:41:29 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/17 20:01:38 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    Zombie::announce(void)
-{
-		std::cout << _name << ": " << speak << std::endl;
+#include "../inc/Zombie.hpp"
+
+Zombie::Zombie( void ) {
+        std::cout << "Zombie " << this->_name << " has been created." << std::endl;
 }
 
-void	Zombie::setName(std::string name)
-{
-	_name = name;
-	speak = "BraiiiiiiinnnzzzZ...";
+Zombie::~Zombie( void ) {
+    std::cout << "Zombie " << this->_name << " has been destroyed." << std::endl;
 }
 
-Zombie::Zombie(void)
-{
-	std::cout << "Zombie" << " created" << std::endl;
+void    Zombie::announce( void ) {
+    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::~Zombie(void)
-{
-	std::cout << _name << ": " << "die." << std::endl;
+void    Zombie::setName( std::string name ) {
+    this->_name = name;
 }
+

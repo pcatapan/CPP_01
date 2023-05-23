@@ -1,14 +1,26 @@
-#include "../inc/zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 15:41:21 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 15:44:28 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void)
-{
-	int	count;
-	Zombie *horde;
+#include "../inc/Zombie.hpp"
 
-	count = 5;
+#define N 42
 
-	horde = zombieHorde(count, "monster");
-	delete[] horde;
+int main( void ) {
+    Zombie *zombiz = zombieHorde(N, "zombi");
 
-	return 0;
+    for (size_t i = 0; i < N; i++) {
+        zombiz[i].announce();
+    }
+
+    delete [] zombiz;
+    return 0;
 }

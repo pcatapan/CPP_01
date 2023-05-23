@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 15:53:31 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 15:53:32 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WEAPON_HPP
-# define WEAPON_HPP
+#define WEAPON_HPP
 
-# include <iostream>
+#include <iostream>
 
-class Weapon{
+class Weapon
+{
+private:
+    std::string type;
 
-	private:
-		std::string _type;
+public:
+    Weapon( std::string type );
+    ~Weapon();
 
-	public:
-		Weapon(std::string type);
-		~Weapon(void);
-
-		const std::string& getType();
-		void	setType(std::string type);
-
+    const std::string&  getType( void );
+    void                setType( std::string newType );
 };
 
-#endif
+#endif // WEAPON_HPP

@@ -1,20 +1,27 @@
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 15:53:18 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 15:53:19 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include "Weapon.hpp"
+#include "Weapon.hpp"
 
-class HumanA{
+class HumanA
+{
+private:
+    std::string _name;
+    Weapon&     _weapon;
+    HumanA();
 
-	private:
-		std::string _name;
-		Weapon &_weapon;
+public:
+    HumanA( std::string name, Weapon& weapon );
+    ~HumanA();
 
-	public:
-		void	attack(void);
-		void	setWeapon(Weapon weapon);
-
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA(void);
+    void    attack( void ) const;
 };
-
-#endif

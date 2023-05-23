@@ -1,26 +1,32 @@
-#ifndef HARL_HPP
-# define HARL_HPP
-
-# define DEFAULT "\001\033[0;39m\002"
-# define RED "\001\033[1;91m\002"
-# define YELLOW "\001\033[1;93m\002"
-# define GRAY "\001\033[1;90m\002"
-# define BLUE "\001\033[1;34m\002"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/15 16:44:14 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 16:44:15 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 
-class HARL
+class   Harl
 {
-	private :
-		void	debug(void);
-		void	info(void);
-		void	error(void);
-		void	warning(void);
+private:
+    void    debug( void );
+    void    info( void );
+    void    warning( void );
+    void    error( void );
 
-	public :
-		HARL(void);
-		~HARL(void);
-		void complain(std::string level);
+
+public:
+    Harl();
+    ~Harl();
+
+    void        complain( std:: string level );
+
 };
 
-#endif
+typedef void (Harl::*t_func) ( void );

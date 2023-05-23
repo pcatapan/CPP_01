@@ -1,9 +1,19 @@
-#include "../inc/zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 20:10:27 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/17 20:11:44 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	randomChump( std::string name ){
-	Zombie *z;
+#include "../inc/Zombie.hpp"
 
-	z = newZombie(name);
-	z->announce();
-	delete z;
+void	randomChump(std::string name)
+{
+	Zombie	z = Zombie(name);
+	z.announce();
 }

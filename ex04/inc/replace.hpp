@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 15:45:19 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/15 15:45:25 by pcatapan         ###   ########.fr       */
+/*   Created: 2023/05/15 16:32:02 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/15 16:33:03 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
 #include <iostream>
+#include <fstream>
 
-class Zombie
+class Replace
 {
-    
 private:
-    std::string _name;
+	std::string _inFile;
+	std::string _outFile;
 
 public:
-    Zombie();
-    ~Zombie();
-    void    announce( void );
-    Zombie* newZombie( std::string name );
-    void    setName( std::string name );
+	Replace( std::string filename);
+	~Replace();
 
+	void	replace( std::string s1, std::string s2);
 };
-
-Zombie*    zombieHorde( int N, std::string name );
 
 #endif

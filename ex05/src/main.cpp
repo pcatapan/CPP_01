@@ -1,12 +1,24 @@
-#include "../inc/harl.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/17 20:14:51 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/19 22:57:55 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(){
-    HARL harl;
+#include "../inc/Karen.hpp"
 
-    harl.complain("debug");
-    harl.complain("info");
-    harl.complain("warning");
-    harl.complain("error");
-    
-    return (0);
+int	main(void)
+{
+	Karen k;
+
+	k.complain("DEBUG");
+	k.complain("INFO");
+	k.complain("WARNING");
+	k.complain("ERROR");
+	return (0);
 }

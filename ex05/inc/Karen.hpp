@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 20:10:40 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/17 20:10:50 by pcatapan         ###   ########.fr       */
+/*   Created: 2023/05/17 20:14:59 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/17 20:15:12 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef KAREN_HPP
+
+# define KAREN_HPP
+
+# define DEFAULT "\001\033[0;39m\002"
+# define RED "\001\033[1;91m\002"
+# define YELLOW "\001\033[1;93m\002"
+# define MAGENTA "\001\033[1;95m\002"
+# define GRAY "\001\033[1;90m\002"
+
 # include <iostream>
 
-class	Zombie
+class	Karen
 {
 	private:
-		std::string	_name;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 	public:
-		Zombie(std::string name);
-		~Zombie(void);
-		void	announce(void);
+		Karen(void);
+		~Karen(void);
+		void	complain(std::string level);
 };
 
 #endif
