@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 20:15:06 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/19 22:57:58 by pcatapan         ###   ########.fr       */
+/*   Created: 2023/05/25 16:19:42 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/25 16:23:08 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Karen.hpp"
+#include "../inc/Harl.hpp"
 
-Karen::Karen(void)
+Harl::Harl(void)
 {
-	std::cout << "A wild Karen has appeared!" << std::endl;
+	std::cout << "A wild Harl has appeared!" << std::endl;
 }
 
-Karen::~Karen(void)
+Harl::~Harl(void)
 {
-	std::cout << "Wild Karen flew away!" << std::endl;
+	std::cout << "Wild Harl flew away!" << std::endl;
 }
 
-void	Karen::debug(void)
+void	Harl::debug(void)
 {
 	std::cout << MAGENTA << "[DEBUG]   " << DEFAULT;
 	std::cout << "I love to get extra bacon for my ";
@@ -30,7 +30,7 @@ void	Karen::debug(void)
 	std::cout << " I just love it!" << std::endl;
 }
 
-void	Karen::info(void)
+void	Harl::info(void)
 {
 	std::cout << GRAY << "[INFO]    " << DEFAULT;
 	std::cout << "I cannot believe adding extra bacon cost more money.";
@@ -38,7 +38,7 @@ void	Karen::info(void)
 	std::cout << " for it!" << std::endl;
 }
 
-void	Karen::warning(void)
+void	Harl::warning(void)
 {
 	std::cout << YELLOW << "[WARNING] " << DEFAULT;
 	std::cout << "I think I deserve to have some extra bacon for free.";
@@ -46,16 +46,16 @@ void	Karen::warning(void)
 	std::cout << "working here last month." << std::endl;
 }
 
-void	Karen::error(void)
+void	Harl::error(void)
 {
 	std::cout << RED << "[ERROR]   " << DEFAULT;
 	std::cout << "This is unacceptable, I want to speak to the manager now.";
 	std::cout << std::endl;
 }
 
-void	Karen::complain(std::string level)
+void	Harl::complain(std::string level)
 {
-	void		(Karen::*ptr_complain[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	void		(Harl::*ptr_complain[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)

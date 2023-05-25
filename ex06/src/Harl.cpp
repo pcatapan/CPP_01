@@ -6,7 +6,7 @@
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:43:31 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/15 16:43:42 by pcatapan         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:28:12 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,19 @@ void    Harl::complain( std:: string level ) {
     {
     case    0: 
         this->debug();
+        this->info();
+        this->warning();
+        this->error();
+        break ;
     case    1: 
         this->info();
+        this->warning();
+        this->error();
+        break ;
     case    2: 
         this->warning();
+        this->error();
+        break;
     case    3: 
         this->error();
         break ;

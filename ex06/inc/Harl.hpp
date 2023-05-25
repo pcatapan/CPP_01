@@ -6,11 +6,12 @@
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:44:14 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/15 16:44:15 by pcatapan         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:28:39 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 class   Harl
 {

@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:14:59 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/17 20:15:12 by pcatapan         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:22:22 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-
-# define KAREN_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 # define DEFAULT "\001\033[0;39m\002"
 # define RED "\001\033[1;91m\002"
@@ -22,7 +21,7 @@
 
 # include <iostream>
 
-class	Karen
+class	Harl
 {
 	private:
 		void	debug(void);
@@ -30,8 +29,8 @@ class	Karen
 		void	warning(void);
 		void	error(void);
 	public:
-		Karen(void);
-		~Karen(void);
+		Harl(void);
+		~Harl(void);
 		void	complain(std::string level);
 };
 
