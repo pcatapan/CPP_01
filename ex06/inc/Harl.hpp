@@ -6,12 +6,18 @@
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:44:14 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/25 16:28:39 by pcatapan         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:20:09 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
+
+# define DEFAULT "\001\033[0;39m\002"
+# define RED "\001\033[1;91m\002"
+# define YELLOW "\001\033[1;93m\002"
+# define MAGENTA "\001\033[1;95m\002"
+# define GRAY "\001\033[1;90m\002"
 
 class   Harl
 {
